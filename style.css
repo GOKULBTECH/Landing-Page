@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif,"popins";
+}
+
+body{
+    height: 100vh;
+    color: #000;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+
+}
+
+a:hover{
+    color: orangered;
+
+}
+
+header{
+    position: relative;
+    padding: 0 16px;
+}
+
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a{
+    font-size: 24px;
+    font-weight: bold;
+   
+}
+
+.navbar .links{
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    color: white;
+    background-color: orangered;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2 ease;
+    
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn.active{
+    scale: 0.95;
+}
+
+
+.dropdown_menu{
+    position: absolute;
+     top: 60px;
+     right: 20px;
+     height: 0;
+     background-color: rgba(255, 255, 255, 0.1);
+     width: 300px;
+     backdrop-filter: blur(15px);
+     overflow: hidden;
+     border-radius: 10px;
+     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+}
+
+#hero h1{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+
+}
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 20px;
+        width: unset;
+    }
+}
+
+
